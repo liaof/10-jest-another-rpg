@@ -1,4 +1,10 @@
+// import the Potion() constructor as a usable variable
 const Potion = require('../lib/Potion.js');
+// jest.mock() replaces the constructor's implmentation with our faked data
+// from this point on when new Potion() is called, our fake data is returned
+
+jest.mock('../lib/Potion');
+console.log(new Potion());
 
 test('creates a health potion object', () => {
     const potion = new Potion('health');
